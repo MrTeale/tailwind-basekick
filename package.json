@@ -1,0 +1,42 @@
+{
+    "name": "tailwind-basekick",
+    "version": "0.1.0",
+    "description": "TailwindCSS plugin for aligning text to its baseline",
+    "license": "MIT",
+    "repository": "mrteale/tailwind-basekick",
+    "main": "dist/index.js",
+    "author": {
+        "name": "Lachlan Teale",
+        "email": "lachlan.teale@gmail.com",
+        "url": "https://lachlanteale.com"
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "keywords": [
+        "tailwind",
+        "basekick",
+        "tailwindcss",
+        "typography",
+        "baseline",
+        "CSS"
+    ],
+    "scripts": {
+        "lint": "npx prettier --write src/",
+        "build": "babel src -d dist",
+        "prerelease": "npm run lint && npm run build",
+        "release": "standard-version",
+        "postpublish": "git push origin master --follow-tags"
+    },
+    "dependencies": {
+        "tailwindcss": "^3.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.6",
+        "@babel/core": "^7.17.9",
+        "@babel/preset-env": "^7.16.11",
+        "prettier": "^2.6.2",
+        "standard-version": "^9.3.2"
+    }
+}
