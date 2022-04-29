@@ -1,6 +1,6 @@
 {
     "name": "tailwind-basekick",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "TailwindCSS plugin for aligning text to its baseline",
     "license": "MIT",
     "repository": "mrteale/tailwind-basekick",
