@@ -45,6 +45,13 @@ function getValueAndUnit(value) {
   return [value, undefined];
 }
 
+function getFontValue(item) {
+  if (typeof item === "object") {
+    return item[0];
+  }
+  return item;
+}
+
 function createCssSelectors(fontFamily, sizeName, leading) {
   return (
     `.font-${fontFamily}.text-${sizeName}.leading-${leading}.baseline, ` +
@@ -54,3 +61,10 @@ function createCssSelectors(fontFamily, sizeName, leading) {
     `.text-${sizeName} .font-${fontFamily} .leading-${leading}.baseline`
   );
 }
+
+module.exports = {
+  basekickStyles,
+  getValueAndUnit,
+  getFontValue,
+  createCssSelectors,
+};

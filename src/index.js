@@ -1,8 +1,12 @@
 const plugin = require("tailwindcss/plugin");
-import { basekickStyles, getValueAndUnit, createCssSelectors } from "./utils";
+const {
+  basekickStyles,
+  getValueAndUnit,
+  getFontValue,
+  createCssSelectors,
+} = require("./utils");
 
 module.exports = plugin(function ({ addUtilities, theme }) {
-  console.log(theme("basekick"));
   const spacing = theme("spacing");
   const [gridRowHeightRem] = getValueAndUnit(spacing["1"]);
   const fonts = theme("basekick");
@@ -28,7 +32,7 @@ module.exports = plugin(function ({ addUtilities, theme }) {
     };
 
     Object.keys(fontSize).forEach((sizeName) => {
-      const [fontSizeRem] = getValueAndUnit(fontSize[sizeName][0]);
+      const [fontSizeRem] = getValueAndUnit(getFontValue(fontSize[sizeName]));
       multiplierLeadings.forEach((leading) => {
         const [lineHeightMultiplier] = getValueAndUnit(lineHeight[leading]);
         utilities[createCssSelectors(fontFamily, sizeName, leading)] =
