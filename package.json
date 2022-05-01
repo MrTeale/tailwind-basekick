@@ -23,7 +23,12 @@
         "CSS"
     ],
     "scripts": {
+        "test": "jest",
+        "coverage": "npm test -- --coverage",
+        "postcoverage": "open-cli coverage/lcov-report/index.html",
         "lint": "npx prettier --write src/",
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
         "build": "babel src -d dist",
         "prerelease": "npm run lint && npm run build",
         "release": "standard-version",
@@ -32,11 +37,19 @@
     "dependencies": {
         "tailwindcss": "^3.0.0"
     },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**"
+        ]
+    },
     "devDependencies": {
         "@babel/cli": "^7.17.6",
         "@babel/core": "^7.17.9",
         "@babel/preset-env": "^7.16.11",
+        "jest": "^28.0.3",
+        "open-cli": "^7.0.1",
         "prettier": "^2.6.2",
+        "rimraf": "^3.0.2",
         "standard-version": "^9.3.2"
     }
 }
