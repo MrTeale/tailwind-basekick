@@ -1,5 +1,10 @@
 const plugin = require("tailwindcss/plugin");
-const { basekickStyles, getValueAndUnit, getFontValue, createCssSelectors } = require("./utils");
+const {
+  basekickStyles,
+  getValueAndUnit,
+  getFontValue,
+  createCssSelectors,
+} = require("./utils");
 
 module.exports = plugin(function ({ addUtilities, theme }) {
   const spacing = theme("spacing");

@@ -47,7 +47,7 @@ function getValueAndUnit(value) {
 
 function getFontValue(item) {
   if (typeof item === "object") {
-      return item[0];
+    return item[0];
   }
   return item;
 }
@@ -62,4 +62,9 @@ function createCssSelectors(fontFamily, sizeName, leading) {
   );
 }
 
-module.exports = { basekickStyles, getValueAndUnit, getFontValue, createCssSelectors };
+module.exports = {
+  basekickStyles,
+  getValueAndUnit,
+  getFontValue,
+  createCssSelectors,
+};
