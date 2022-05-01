@@ -1,6 +1,6 @@
 {
     "name": "tailwind-basekick",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "TailwindCSS plugin for aligning text to its baseline",
     "license": "MIT",
     "repository": "mrteale/tailwind-basekick",
@@ -30,9 +30,9 @@
         "clean": "rimraf dist",
         "prebuild": "npm run clean",
         "build": "babel src -d dist",
-        "prerelease": "npm run lint && npm run build",
+        "prerelease": "npm run lint && git add && npm run build",
         "release": "standard-version",
-        "postpublish": "git push origin master --follow-tags"
+        "postpublish": " git push origin master"
     },
     "dependencies": {
         "tailwindcss": "^3.0.0"
